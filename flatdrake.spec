@@ -2,7 +2,7 @@
 
 Summary:	FlatDrake is a frontend for FlatPak
 Name:		flatdrake
-Version:	2.3.1
+Version:	2.3.2
 Release:	1
 License:	GPLv3
 Group:		Graphical desktop/KDE
@@ -27,7 +27,7 @@ Requires:	gambas-gb.dbus = %{gb3_ver}
 Requires:	gambas-gb.form = %{gb3_ver}
 Requires:	gambas-gb.form.stock = %{gb3_ver}
 Requires:	gambas-gb.gui = %{gb3_ver}
-Requires:  gambas-gb.qt6 = %{gb3_ver}
+Requires:	gambas-gb.qt6 = %{gb3_ver}
 Requires:	gambas-gb.image = %{gb3_ver}
 Requires:	gambas-gui-backend = %{gb3_ver}
 Requires:	lsb-release
