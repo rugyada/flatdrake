@@ -1,7 +1,4 @@
-%define gb_ver %(if rpm -q gambas-devel &>/dev/null; then rpm -q --qf '%%{version}' gambas-devel; else echo -n 3.20; fi)
-%define gb_major %(echo %{gb_ver} |cut -d. -f1-2)
-%define gb_next_major %(echo -n $(echo %{gb_major} |cut -d. -f1).; GB_MINOR=$(echo %{gb_ver}|cut -d. -f2); echo -n $((GB_MINOR+1)))
-
+%global gb3_ver %(rpm -q --qf '%%{version}' gambas-devel)
 
 Summary:	FlatDrake is a frontend for FlatPak
 Name:		flatdrake
@@ -24,16 +21,27 @@ BuildRequires:	gambas-gui-backend
 BuildRequires:	imagemagick
 
 Requires:	flatpak
-Requires:	(gambas-runtime >= %{gb3_major} with gambas-runtime < %{gb3_next_major})
-Requires:	(gambas-gb.dbus >= %{gb3_major} with gambas-gb.dbus < %{gb3_next_major})
-Requires:	(gambas-gb.form >= %{gb3_major} with gambas-gb.form < %{gb3_next_major})
-Requires:	(gambas-gb.form.stock >= %{gb3_major} with gambas-gb.form.stock < %{gb3_next_major})
-Requires:	(gambas-gb.gui >= %{gb3_major} with gambas-gb.gui < %{gb3_next_major})
-Requires:	(gambas-gb.qt6 >= %{gb3_major} with gambas-gb.qt6 < %{gb3_next_major})
-Requires:	(gambas-gb.image >= %{gb3_major} with gambas-gb.image < %{gb3_next_major})
-Requires:	(gambas-gui-backend >= %{gb3_major} with gambas-gui-backend < %{gb3_next_major})
-Requires:	(gambas-gb.form.dialog >= %{gb3_major} with gambas-gb.form.dialog < %{gb3_next_major})
-Requires:	(gambas-gb.complex >= %{gb3_major} with gambas-gb.complex < %{gb3_next_major})
+#Requires:	(gambas-runtime >= %{gb3_major} with gambas-runtime < %{gb3_next_major})
+#Requires:	(gambas-gb.dbus >= %{gb3_major} with gambas-gb.dbus < %{gb3_next_major})
+#Requires:	(gambas-gb.form >= %{gb3_major} with gambas-gb.form < %{gb3_next_major})
+#Requires:	(gambas-gb.form.stock >= %{gb3_major} with gambas-gb.form.stock < %{gb3_next_major})
+#Requires:	(gambas-gb.gui >= %{gb3_major} with gambas-gb.gui < %{gb3_next_major})
+#Requires:	(gambas-gb.qt6 >= %{gb3_major} with gambas-gb.qt6 < %{gb3_next_major})
+#Requires:	(gambas-gb.image >= %{gb3_major} with gambas-gb.image < %{gb3_next_major})
+#Requires:	(gambas-gui-backend >= %{gb3_major} with gambas-gui-backend < %{gb3_next_major})
+#Requires:	(gambas-gb.form.dialog >= %{gb3_major} with gambas-gb.form.dialog < %{gb3_next_major})
+#Requires:	(gambas-gb.complex >= %{gb3_major} with gambas-gb.complex < %{gb3_next_major})
+
+Requires:	gambas-runtime = %{gb3_ver}
+Requires:	gambas-devel = %{gb3_ver}
+Requires:	gambas-gb.dbus = %{gb3_ver}
+Requires:	gambas-gb.form = %{gb3_ver}
+Requires:	gambas-gb.form.stock = %{gb3_ver}
+Requires:	gambas-gb.gui = %{gb3_ver}
+Requires:	gambas-gb.qt6 = %{gb3_ver}
+Requires:	gambas-gb.image = %{gb3_ver}
+Requires:	gambas-gui-backend = %{gb3_ver}
+
 Requires:	lsb-release
 Requires:	xrandr
 Requires:	draketray
